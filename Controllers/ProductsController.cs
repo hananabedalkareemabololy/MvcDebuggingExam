@@ -80,7 +80,7 @@ namespace MvcDebuggingExam.Controllers
             return View(product);
         }
 
-        [HttpPost]
+       /* [HttpPost]
         public IActionResult Delete(int productId)
         {
             var product = products.FirstOrDefault(p => p.Id == productId);
@@ -89,8 +89,8 @@ namespace MvcDebuggingExam.Controllers
                 products.Remove(product);
             }
             return RedirectToAction(nameof(Index));
-        }
-
+        }*/
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
             var product = products.FirstOrDefault(p => p.Id == id);
@@ -100,5 +100,8 @@ namespace MvcDebuggingExam.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+   
+       
     }
 }
